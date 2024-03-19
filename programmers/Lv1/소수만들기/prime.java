@@ -24,7 +24,7 @@ public class prime {
 
         for (int num : list) {
 
-            if (prime(num)) {
+            if (primenum(num)) {
                 answer += 1;
             }
         }
@@ -32,7 +32,7 @@ public class prime {
         return answer;
     }
 
-    public static boolean prime(int num) {
+    public static boolean primenum(int num) {
         for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0)
                 return false;
