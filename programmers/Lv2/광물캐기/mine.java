@@ -1,15 +1,6 @@
 import java.util.*;
 
 public class mine {
-    public static void main(String[] args) {
-
-        solution(new int[] { 1, 3, 2 },
-                new String[] { "diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone" });
-        solution(new int[] { 0, 1, 1 },
-                new String[] { "diamond", "diamond", "diamond","diamond","diamond", "iron", "iron", "iron", "iron", "iron", "diamond" });
-
-    }
-
     public static int solution(int[] picks, String[] minerals) {
         int answer = 0;
         int[][] list;

@@ -3,10 +3,6 @@ import java.util.*;
 
 class fruit {
 
-    public static void main(String[] args){
-        solution(3,4,new int[]{1,2,3,1,2,3,1});
-    }
-
     public static int solution(int k, int m, int[] score) {
         
         int answer = 0;      
