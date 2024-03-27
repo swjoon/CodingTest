@@ -1,5 +1,3 @@
-package silver.어린왕자;
-
 import java.util.Scanner;
 
 //1003번문제

@@ -1,5 +1,3 @@
-package silver.터렛;
-
 import java.util.*;
 
 public class turret {

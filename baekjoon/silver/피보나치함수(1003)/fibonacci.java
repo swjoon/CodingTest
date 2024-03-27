@@ -1,5 +1,3 @@
-package silver.피보나치함수;
-
 import java.util.Scanner;
 
 //1003번문제
