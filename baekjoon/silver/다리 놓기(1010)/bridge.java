@@ -15,6 +15,8 @@ public class bridge{
 
             System.out.println(result);
         }
+
+        sc.close();
     }
 
 

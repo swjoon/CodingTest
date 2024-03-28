@@ -13,7 +13,7 @@ public class Main {
 
             System.out.println(solution(y-x));
         }
-
+        sc.close();
     }
 
     public static int solution(int n) {
