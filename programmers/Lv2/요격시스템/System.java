@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv2.요격시스템;
+package 요격시스템;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv2.예상대진표;
+package 예상대진표;
 
 public class table {
     public static int solution(int n, int a, int b) {

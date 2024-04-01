@@ -1,4 +1,5 @@
 package CodingTest.programmers.Lv1.과일장수;
+
 import java.util.*;
 
 class fruit {

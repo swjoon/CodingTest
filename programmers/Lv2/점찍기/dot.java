@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv2.점찍기;
+package 점찍기;
 
 public class dot {
 

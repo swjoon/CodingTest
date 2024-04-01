@@ -1,23 +1,30 @@
-import java.util.*;
+package CodingTest.baekjoon.bronze.분산처리;
 
+import java.util.*;
+import java.math.*;
 public class distributed {
-    public static void main(String[] args){
+    //메모리 초과
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         int T = sc.nextInt();
-        
-        for(int i = 0; i < T; i++){
+
+        for (int i = 0; i < T; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-            
-            double data = (double)Math.pow(a,b);
+            BigInteger c = BigInteger.valueOf(1);
 
-            double result = (double)(data % 10);
-            if(result == 0){
-                result = 10;
+            for(int j = 0; j < b; j++){
+                c = c.multiply(BigInteger.valueOf(a));
+                c = c.remainder(BigInteger.TEN);
             }
 
-            System.out.println(result);
+            if(c.equals(BigInteger.ZERO)){
+                System.out.println(10);
+            }else{
+                System.out.println(c);
+            }
+            
         }
     }
 }
