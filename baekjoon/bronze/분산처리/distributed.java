@@ -24,7 +24,8 @@ public class distributed {
             }else{
                 System.out.println(c);
             }
-            
+         
         }
+        sc.close();
     }
 }
