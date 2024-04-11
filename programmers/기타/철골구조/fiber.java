@@ -1,3 +1,5 @@
+package CodingTest.programmers.기타.철골구조;
+
 import java.util.*;
 
 public class fiber {
