@@ -11,23 +11,20 @@ public class run {
     }
 
     public static String[] solution(String[] players, String[] callings) {
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < players.length; i++) {
-            map.put(i, players[i]);
+        for (int i = 0 ; i < players.length; i++) {
+            map.put(players[i], i);
         }
 
-        for (int i = 0; i < callings.length; i++) {
-
-            for (int j = 0; j < players.length; j++) {
-                if (players[j].equals(callings[i])) {
-                    String change = players[j - 1];
-                    players[j - 1] = players[j];
-                    players[j] = change;
-                    break;
-                }
-            }
-
+     
+        for(int i = 0; i < callings.length; i++){
+            int num = map.get(callings[i]);
+            String fname = players[num-1];
+            map.put(fname, num);
+            map.put(callings[i],num-1);
+            players[num] = fname;
+            players[num-1] = callings[i];
         }
 
         return players;
