@@ -3,8 +3,9 @@ package CodingTest.programmers.Lv1.달리기경주;
 
 import java.util.*;
 
+
+// map 과 array 사용 해결
 public class run {
-    // 시간초과
     public static void main(String[] args) {
         System.out.println(Arrays.toString(solution(new String[] { "mumu", "soe", "poe", "kai", "mine" },
                 new String[] { "kai", "kai", "mine", "mine" })));
