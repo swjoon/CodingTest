@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv1.달리기경주;
+package 달리기경주;
 
 
 import java.util.*;

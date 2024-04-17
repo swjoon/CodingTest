@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv1.과일장수;
+package 과일장수;
 
 import java.util.*;
 

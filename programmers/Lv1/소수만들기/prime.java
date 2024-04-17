@@ -1,4 +1,4 @@
-package CodingTest.programmers.Lv1.소수만들기;
+package 소수만들기;
 
 import java.util.*;
 
