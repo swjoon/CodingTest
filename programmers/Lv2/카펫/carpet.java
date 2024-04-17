@@ -10,7 +10,7 @@ public class carpet {
     public static int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
 
-        for(int i = 1; i < yellow/2 ; i++){
+        for(int i = 1; i <= yellow ; i++){
             int y = 0;
             if(yellow % i == 0){
                 y = yellow / i;
@@ -18,15 +18,15 @@ public class carpet {
                     if(y > i){
                         answer[0] = y+2;
                         answer[1] = i+2;
-                        break;
+                        return answer;
                     }else if(y < i){
                         answer[1] = y+2;
                         answer[0] = i+2;
-                        break;
+                        return answer;
                     }else{
                         answer[0] = y+2;
                         answer[1] = i+2;
-                        break;
+                        return answer;
                     }
                 }
             }
