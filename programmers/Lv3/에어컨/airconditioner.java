@@ -9,7 +9,9 @@ public class airconditioner {
         solution(11, 8, 10, 10, 1, new int[] { 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1 });
     }
 
-    public static int solution(int temperature, int t1, int t2, int a, int b, int[] onboard) {
+    // 1차시도 : bfs는 시간초과. 너무 많은 경우의수를 탐색하려고함. -> visited 시도 ( 메모리 초과 )
+    public static int solution(int temperature, int t1, int t2, int a, int b,
+            int[] onboard) {
         int answer = 0;
         int sign = 0;
         int last = 0;
@@ -35,7 +37,8 @@ public class airconditioner {
         return answer;
     }
 
-    public static int maxReturn(int temperature, int t1, int t2, int a, int b, int[] onboard, int last, int sign) {
+    public static int maxReturn(int temperature, int t1, int t2, int a, int b,
+            int[] onboard, int last, int sign) {
         Queue<NowData> queue = new LinkedList<NowData>();
         int min = 100000;
         queue.add(new NowData(0, temperature, 0));
@@ -46,17 +49,22 @@ public class airconditioner {
                     min = (min < nowdata.nowPower) ? min : nowdata.nowPower;
                 else
                     continue;
-            } else if (!(onboard[nowdata.now] == 1 && (nowdata.nowTemp < t1 || nowdata.nowTemp > t2))) {
-                queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp + sign, nowdata.nowPower + a));
-                queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp, nowdata.nowPower + b));
+            } else if (!(onboard[nowdata.now] == 1 && (nowdata.nowTemp < t1 ||
+                    nowdata.nowTemp > t2))) {
+                queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp + sign,
+                        nowdata.nowPower + a));
+                queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp, nowdata.nowPower +
+                        b));
                 if (nowdata.nowTemp == temperature) {
                     queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp, nowdata.nowPower));
                 } else
-                    queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp - sign, nowdata.nowPower));
+                    queue.add(new NowData(nowdata.now + 1, nowdata.nowTemp - sign,
+                            nowdata.nowPower));
             }
         }
         return min;
     }
+
 }
 
 class NowData {
