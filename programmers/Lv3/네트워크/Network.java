@@ -1,7 +1,5 @@
 package 네트워크;
 
-import java.util.Arrays;
-
 public class Network {
     public static void main(String[] args) {
         solution(3, new int[][] { { 1, 1, 0 }, { 1, 1, 0 }, { 0, 0, 1 } });
@@ -18,8 +16,6 @@ public class Network {
             if(DFS(i, visited, computers)) answer++;
         }
 
-        System.out.println(Arrays.toString(visited));
-        System.out.println(answer);
         return answer;
     }
 
@@ -27,14 +23,12 @@ public class Network {
     public static boolean DFS(int now, boolean[] visited, int[][] computers){
         if(visited[now]) return false;
         visited[now] = true;
+
         for(int i = 0; i < computers.length; i++){
             if(computers[now][i]==1){
                 DFS(i, visited, computers);
             }
         }
-
         return true;
     }
 }
-// if 1 2 4 5 3
-// 1 - 2 -> 5 
