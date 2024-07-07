@@ -11,7 +11,8 @@ public class Rank {
         int answer = 0;
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int[] result: results){
-            
+            int win = result[0];
+            int lose = result[1];
         }
 
 
