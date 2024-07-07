@@ -26,6 +26,7 @@ public class Lifeboat {
             answer++;										
         }
         System.out.println(answer);
+        
         return answer;
     }
 }
