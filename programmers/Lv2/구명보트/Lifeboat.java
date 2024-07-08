@@ -12,20 +12,19 @@ public class Lifeboat {
 
         Arrays.sort(people);
 
-        int startIdx = 0;  
-        int endIdx = people.length -1;  
-        
-        while (startIdx <= endIdx) {
+        int start = 0;
+        int end = people.length - 1;
+
+        while(start <= end){
             
-            if (people[startIdx] + people[endIdx] <= limit) { 
-                startIdx++;                                    
+            if(people[start] + people[end] <= limit){
+                start++;
             }
-            
-            endIdx--;                                       
-            
-            answer++;										
+        
+            end--;
+
+            answer ++; 
         }
-        System.out.println(answer);
         
         return answer;
     }
