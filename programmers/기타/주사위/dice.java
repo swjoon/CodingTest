@@ -1,4 +1,4 @@
-package CodingTest.programmers.기타.주사위;
+package programmers.기타.주사위;
 
 import java.util.*;
 
