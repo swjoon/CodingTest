@@ -1,4 +1,4 @@
-package CodingTest.baekjoon.bronze.분산처리;
+package baekjoon.bronze.분산처리;
 
 import java.util.*;
 import java.math.*;
