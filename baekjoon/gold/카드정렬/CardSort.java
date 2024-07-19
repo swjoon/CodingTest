@@ -45,7 +45,3 @@ public class CardSort {
         return answer;
     }
 }
-// 10 20 30 40 50
-// 10 + 20 30 + 30 60 + 40
-// 90 190
-// 30 60 100 150
