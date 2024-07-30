@@ -17,11 +17,9 @@ public class Tower {
         }
 
         for (int i = 1; i <= N; i++) {
-
             while (!stack.isEmpty() && stack.peek()[0] < tower[i]) {
                 stack.pop();
             }
-
             if (stack.isEmpty()) {
                 stack.push(new int[] { tower[i], i });
                 sb.append(0).append(" ");
