@@ -5,84 +5,85 @@ import java.io.*;
 
 public class Network {
 
-    static int N, M;
-    static int[] parent;
-    static int[][] root;
-    static int cnt = 0;
-    static List<int[]> list = new ArrayList<>();
+    public static int n, m;
+    public static int[] distance, connect;
+    public static int INF = Integer.MAX_VALUE;
 
-    // map으로 양뱡향 값 넣기
-    // 각 노드에서 1까지 가는 최소치의 값 구함
-    // HashSet으로 중복제거
-    
+    public static class Node implements Comparable<Node> {
+        int n;
+        int dis;
+
+        public Node(int n, int dis) {
+            this.n = n;
+            this.dis = dis;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return this.dis - o.dis;
+        }
+    }
+
+    public static ArrayList<Node>[] list;
+    public static int cnt;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        StringBuilder sb = new StringBuilder();
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        list = new ArrayList[n + 1];
+        distance = new int[n + 1];
+        connect = new int[n + 1];
 
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
-
-        parent = new int[N + 1];
-        root = new int[M][3];
-
-        for (int i = 0; i <= N; i++) {
-            parent[i] = i;
+        for (int i = 0; i < n + 1; i++) {
+            list[i] = new ArrayList<Node>();
         }
 
-        for (int i = 0; i < M; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 3; j++) {
-                root[i][j] = Integer.parseInt(st.nextToken());
-            }
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int dis = Integer.parseInt(st.nextToken());
+
+            list[a].add(new Node(b, dis));
+            list[b].add(new Node(a, dis));
         }
 
-        Arrays.sort(root, ((o1, o2) -> o1[2] - o2[2]));
+        Arrays.fill(distance, INF);
+        distance[1] = 0;
+        
+        dijkstra();
 
-        for (int i = 0; i < M; i++) {
-            int x = root[i][0];
-            int y = root[i][1];
-
-            if (parent[x] != parent[y]) {
-                union(x, y);
-                list.add(new int[] { x, y });
-            }
-
-            if (check()) {
-                break;
-            }
+        for (int i = 2; i <= n; i++) {
+            if (connect[i] == 0)
+                continue;
+            cnt++;
+            sb.append(i + " " + connect[i] + "\n");
         }
-
-        System.out.println(list.size());
-        for (int[] l : list) {
-            System.out.println(l[0] + " " + l[1]);
-        }
-
+        System.out.println(cnt);
+        System.out.println(sb.toString());
     }
 
-    static void union(int n1, int n2) {
-        int p1 = find(n1);
-        int p2 = find(n2);
+    static void dijkstra() {
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.add(new Node(1, 0));
+        while (!pq.isEmpty()) {
+            Node node = pq.poll();
 
-        if (p1 > p2) {
-            parent[n1] = p2;
-        } else {
-            parent[n2] = p1;
-        }
-    }
+            if (node.dis > distance[node.n])
+                continue;
 
-    static int find(int n) {
-        if (parent[n] != n) {
-            parent[n] = find(parent[n]);
+            // 1까지의 거리가 더 짧은 경우에 connect[n] 갱신.
+            for (Node nd : list[node.n]) {
+                if (distance[nd.n] > nd.dis + node.dis) {
+                    distance[nd.n] = nd.dis + node.dis;
+                    connect[nd.n] = node.n;
+                    pq.add(new Node(nd.n, distance[nd.n]));
+                }
+            }
         }
-        return parent[n];
-    }
-
-    static boolean check() {
-        for (int i = 1; i <= N; i++) {
-            if (parent[i] != 1)
-                return false;
-        }
-        return true;
     }
 }
