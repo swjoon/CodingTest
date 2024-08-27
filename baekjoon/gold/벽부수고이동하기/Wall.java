@@ -45,16 +45,17 @@ public class Wall {
                 return p.cnt;
             }
 
+            // 벽을 1회 부쉈는가 아닌가 체크여부 use
             if (p.use) {
                 for (int i = 0; i < 4; i++) {
                     int nextx = p.x + dirX[i];
                     int nexty = p.y + dirY[i];
-
+                    // 중복방지를 위해 visited와 usevisited를 둘다 체크. 벽을 만났을때 더이상 부술수 없으므로 탐색 불가
                     if (nextx < 0 || nexty < 0 || nextx >= M || nexty >= N || visited[nexty][nextx]
                             || usevisited[nexty][nextx] || map[nexty][nextx] == 1) {
                         continue;
                     }
-
+                    // queue에 넣기전 미리 체크. 메모리 절약
                     usevisited[nexty][nextx] = true;
 
                     q.add(new Point(nextx, nexty, p.cnt + 1, true));
@@ -70,10 +71,6 @@ public class Wall {
 
                     if (map[nexty][nextx] == 1 && !usevisited[nexty][nextx]) {
                         q.add(new Point(nextx, nexty, p.cnt + 1, true));
-                        continue;
-                    }
-
-                    if (map[nexty][nextx] == 1) {
                         continue;
                     }
 
