@@ -1,4 +1,4 @@
-package baekjoon.gold.다리만들기;
+package baekjoon.gold.다리만들기2;
 
 import java.util.*;
 import java.io.*;
