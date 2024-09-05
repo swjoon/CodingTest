@@ -29,37 +29,37 @@ public class GreedyPanda {
             }
         }
 
+        // 각 칸에서 판다의 최대 이동량 구함
         for (int y = 0; y < N; y++) {
             for (int x = 0; x < N; x++) {
                 ans = Math.max(ans ,DFS(x, y));
             }
         }
 
-        for (int i = 0; i < N; i++) {
-            System.out.println(Arrays.toString(DP[i]));
-        }
-
         System.out.println(ans);
     }
 
     static int DFS(int x, int y) {
-
+        // 해당 칸에서 이미 최대이동량을 구해놨으면 바로 반환. (메모제이션 활용)
         if (DP[y][x] != 1) {
             return DP[y][x];
         }
 
+        // 상하좌우 이동
         for (int i = 0; i < 4; i++) {
             int nextx = x + dirX[i];
             int nexty = y + dirY[i];
-            int max = 1;
-
+            int route = 1;
+            
             if (nextx < 0 || nexty < 0 || nextx >= N || nexty >= N || map[y][x] >= map[nexty][nextx]) {
                 continue;
             }
 
-            max += DFS(nextx, nexty);
+            // 각 방향마다 이동량 구함
+            route += DFS(nextx, nexty);
 
-            DP[y][x] = Math.max(DP[y][x], max);
+            // 최대 이동량 갱신
+            DP[y][x] = Math.max(DP[y][x], route);
         }
 
         return DP[y][x];
