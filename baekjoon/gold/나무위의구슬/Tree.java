@@ -13,6 +13,7 @@ public class Tree {
 
         list.add(new int[] {});
 
+        // 트리만들기
         for (int i = 1; i <= N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int leftNode = Integer.parseInt(st.nextToken());
@@ -33,8 +34,10 @@ public class Tree {
         find(1, K);
     }
 
+    // 노드찾기
     static void find(int node, long k) {
         int type = (int)(k % 2);
+        // 자식노드의 수에 따라 탐색방법 수정
         switch (list.get(node).length) {
             case 2:
                 if (type == 1) {
@@ -47,6 +50,7 @@ public class Tree {
                 find(list.get(node)[0], k);
                 break;
             default:
+                // 분기를 지나다 자식노드가 없는 지점에 도달시 답 도출
                 System.out.println(node);
                 return;
         }
