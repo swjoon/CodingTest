@@ -32,7 +32,9 @@ public class ABCDE {
         }
 
         for(int i = 0; i < N; i++){
-            DFS(0, 1);
+            visited[i] = true;
+            DFS(i, 1);
+            visited[i] = false;
             if(check){
                 System.out.println(1);
                 return;
