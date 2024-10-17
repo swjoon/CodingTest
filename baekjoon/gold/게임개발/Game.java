@@ -42,17 +42,19 @@ public class Game {
     }
 
     static long DP(int i){
-
+        // 메모제이션
         if(dp[i] != 0){
             return dp[i];
         }
 
+        // 선행되어야 할 조건이 없으면 값 반환
         if(list[i].size() == 0){
             return dp[i] = value[i];
         }
 
         long maxValue = 0;
 
+        // 모든 선행 조건들이 완료되어야 진행 가능하므로 max value
         for(int l : list[i]){
             maxValue = Math.max(maxValue, DP(l));
         }
