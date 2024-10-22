@@ -9,6 +9,7 @@ public class Hotel {
         System.out.println(Arrays.toString(solution(10, new long[] { 1, 3, 4, 1, 3, 1, 2, 7, })));
     }
 
+    // 룸 선택시 마다 선택가능한 번호를 반환하고, 동시에 다음 선택시 가능한 번호를 업데이트해줌.
     public static long[] solution(long k, long[] room_number) {
         Map<Long, Long> map = new HashMap<>();
         int N = room_number.length;
