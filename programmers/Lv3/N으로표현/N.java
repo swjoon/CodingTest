@@ -12,6 +12,7 @@ public class N {
         dp.add(new HashSet<>(Collections.singleton(0)));
 
         for (int i = 1; i < 9; i++) {
+            // 중복 저장 방지
             Set<Integer> currentSet = new HashSet<>();
             int repeatedNumber = Integer.parseInt(String.valueOf(N).repeat(i));
             currentSet.add(repeatedNumber);
