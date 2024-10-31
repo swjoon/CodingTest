@@ -4,16 +4,7 @@ import java.util.*;
 
 public class Muji {
     public static void main(String[] args) {
-        System.out.println(solution(new int[] { 1 }, 3));
         System.out.println(solution(new int[] { 3, 3, 3 }, 8));
-        System.out.println(solution(new int[] { 1, 10, 10 }, 6));
-        System.out.println(solution(new int[] { 1, 1, 1 }, 3));
-        System.out.println(solution(new int[] { 3, 1, 2 }, 3));
-        System.out.println(solution(new int[] { 3, 1, 1, 1, 2, 4, 3 }, 12));
-        System.out.println(solution(new int[] { 4, 2, 3, 6, 7, 1, 5, 8 }, 27));
-        System.out.println(solution(new int[] { 4, 2, 3, 6, 7, 1, 5, 8 }, 16));
-        System.out.println(solution(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 35));
-
     }
 
     public static int solution(int[] food_times, long k) {
