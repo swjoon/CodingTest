@@ -1,11 +1,8 @@
 package programmers.Lv4.쿠키구입;
 
-import java.util.*;
-
 public class Cookie {
     public static void main(String[] args) {
         System.out.println("result : " + solution(new int[] { 1, 1, 2, 3 }));
-        System.out.println("result : " + solution(new int[] { 1, 2, 4, 5 }));
     }
 
     public static int solution(int[] cookie) {
