@@ -6,10 +6,11 @@ import java.io.*;
 public class Alphabet {
     static int max;
     static int X, Y;
+    static boolean found;
     static String[][] map;
     static int[] dirX = { 0, 0, 1, -1 };
     static int[] dirY = { 1, -1, 0, 0 };
-    static Stack<String> stack = new Stack<>();
+    static Map<String, Integer> check = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,9 +23,14 @@ public class Alphabet {
 
         for (int y = 0; y < Y; y++) {
             map[y] = br.readLine().split("");
+            for (int x = 0; x < X; x++) {
+                if (!check.containsKey(map[y][x])) {
+                    check.put(map[y][x], 0);
+                }
+            }
         }
 
-        stack.push(map[0][0]);
+        check.replace(map[0][0], 1);
 
         DFS(0, 0, 1);
 
@@ -33,20 +39,26 @@ public class Alphabet {
 
     static void DFS(int x, int y, int dep) {
 
+        max = Math.max(max, dep);
+
+        if (max == check.size() || found) {
+            found = true;
+            return;
+        }
+
         for (int dir = 0; dir < 4; dir++) {
             int nextX = x + dirX[dir];
             int nextY = y + dirY[dir];
 
-            if (nextX < 0 || nextY < 0 || nextX >= X || nextY >= Y || stack.contains(map[nextY][nextX])) {
-                max = Math.max(max, dep);
-                continue;
+            if (found) {
+                return;
             }
 
-            stack.push(map[nextY][nextX]);
-
-            DFS(nextX, nextY, dep + 1);
-
-            stack.pop();
+            if (nextX >= 0 && nextY >= 0 && nextX < X && nextY < Y && check.get(map[nextY][nextX]) == 0) {
+                check.replace(map[nextY][nextX], 1);
+                DFS(nextX, nextY, dep + 1);
+                check.replace(map[nextY][nextX], 0);
+            }
         }
     }
 }
