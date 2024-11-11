@@ -1,0 +1,777 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "distributed",
+            "request": "launch",
+            "mainClass": "baekjoon.bronze.분산처리.distributed",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "ABCDE",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.ABCDE.ABCDE",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "ACM",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.ACMCraft.ACM",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "DDR",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.DanceRevolution.DDR",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Easy",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.Easy2048.Easy",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "LCS",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.LCS.LCS",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Queen",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.NQueen.Queen",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Sequence",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.가장긴바이토닉부분수열.Sequence",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Monitor",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.감시.Monitor",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Avoid",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.감시피하기.Avoid",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Game",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.게임.Game",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Game(1)",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.게임개발.Game",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Stairs",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.계단수.Stairs",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Airport",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.공항.Airport",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Escape",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.구슬탈출.Escape",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Remain",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.나머지합.Remain",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Tree",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.나무위의구슬.Tree",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Downhill",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.내리막길.Downhill",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Gift",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.내선물을받아줘.Gift",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Network",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.네트워크복구.Network",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Bridge",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.다리만들기2.Bridge",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Moon",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.달이차오른다가자.Moon",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Coin",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.동전.Coin",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Coin2",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.동전2.Coin2",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Laser",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.레이저통신.Laser",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Robot",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.미친로봇.Robot",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Wall",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.벽부수고이동하기.Wall",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Wall(1)",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.벽부수고이동하기4.Wall",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Jewel",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.보석도둑.Jewel",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "PartialSum",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.부분합.PartialSum",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Bakery",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.빵집.Bakery",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Ladder",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.사다리조작.Ladder",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Dictionary",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.사전.Dictionary",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "SNS",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.사회망서비스.SNS",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Paper",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.색종이붙이기.Paper",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Train",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.소형기관차.Train",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Shark",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.아기상어.Shark",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "BadLord",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.악덕영주혜유.BadLord",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Alphabet",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.알파벳.Alphabet",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.앱.App",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Laboratory",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.연구소3.Laboratory",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Cycle",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.외판원순회.Cycle",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "GreedyPanda",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.욕심쟁이판다.GreedyPanda",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "God",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.우주신과의교감.God",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Migration",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.인구이동.Migration",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Internet",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.인터넷설치.Internet",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Yutnori",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.주사위윷놀이.Yutnori",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "MinValue",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.최소비용구하기2.MinValue",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Cheese",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.치즈.Cheese",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "CardSort",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.카드정렬.CardSort",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "FillTile",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.타일채우기.FillTile",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Tower",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.탑.Tower",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Project",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.텀프로젝트.Project",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Tree(1)",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.트리의지름.Tree",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Palindrome",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.팰린드롬.Palindrome",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Bag",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.평범한배낭.Bag",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Matrix",
+            "request": "launch",
+            "mainClass": "baekjoon.gold.행렬곱셈순서.Matrix",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "RollerCoaster",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.롤러코스터.RollerCoaster",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Swan",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.백조의호수.Swan",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "FireOff",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.불끄기.FireOff",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Oasis",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.오아시스재결합.Oasis",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "BigNum",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.큰수만들기.BigNum",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "NM",
+            "request": "launch",
+            "mainClass": "baekjoon.silver.N과M.NM",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "assignment",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.과제진행하기.assignment",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Lifeboat",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.구명보트.Lifeboat",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "ball",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.당구연습.ball",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Defense",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.디펜스게임.Defense",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "maze",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.미로탈출.maze",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "clock",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.아날로그시계.clock",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Correct",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.올바른괄호.Correct",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "carpet",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.카펫.carpet",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Number",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.큰수만들기.Number",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "delivery",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.택배배달과수거하기.delivery",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "tictactoe",
+            "request": "launch",
+            "mainClass": "programmers.Lv2.혼자서하는틱택토.tictactoe",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "N",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.N으로표현.N",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Node",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.가장먼노드.Node",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Road",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.경주로건설.Road",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "BaseStation",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.기지국설치.BaseStation",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Network(1)",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.네트워크.Network",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Camera",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.단속카메라.Camera",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Word",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.단어변환.Word",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "School",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.등굣길.School",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "DiskController",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.디스크컨트롤러.DiskController",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Best",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.베스트앨범.Best",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "gem",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.보석쇼핑.gem",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Ban",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.불량사용자.Ban",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Connect",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.섬연결하기.Connect",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Bus",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.셔틀버스.Bus",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Rank",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.순위.Rank",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "numgame",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.숫자게임.numgame",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Item",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.아이템줍기.Item",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "NightShift",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.야근지수.NightShift",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "airconditioner",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.에어컨.airconditioner",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "travel",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.여행경로.travel",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Queuee",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.이중우선순위큐.Queuee",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "review",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.인사고과.review",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Enter",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.입국심사.Enter",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Lock",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.자물쇠와열쇠.Lock",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "triangle",
+            "request": "launch",
+            "mainClass": "programmers.Lv3.정수삼각형.triangle",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Thief",
+            "request": "launch",
+            "mainClass": "programmers.Lv4.도둑질.Thief",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Muji",
+            "request": "launch",
+            "mainClass": "programmers.Lv4.무지의먹방라이브.Muji",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Parentheses",
+            "request": "launch",
+            "mainClass": "programmers.Lv4.올바른괄호의갯수.Parentheses",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Cookie",
+            "request": "launch",
+            "mainClass": "programmers.Lv4.쿠키구입.Cookie",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "Hotel",
+            "request": "launch",
+            "mainClass": "programmers.Lv4.호텔방배정.Hotel",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "dice",
+            "request": "launch",
+            "mainClass": "programmers.기타.주사위.dice",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "fiber",
+            "request": "launch",
+            "mainClass": "programmers.기타.철골구조.fiber",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "gift",
+            "request": "launch",
+            "mainClass": "가장많이받은선물.gift",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "run",
+            "request": "launch",
+            "mainClass": "달리기경주.run",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
+            "name": "score",
+            "request": "launch",
+            "mainClass": "추억점수.score",
+            "projectName": "CodingTest_b0f7bf66"
+        }
+    ]
+}
