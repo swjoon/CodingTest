@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Diamond",
+            "request": "launch",
+            "mainClass": "baekjoon.platinum.다이아몬드광산.Diamond",
+            "projectName": "CodingTest_b0f7bf66"
+        },
+        {
+            "type": "java",
             "name": "Bridge",
             "request": "launch",
             "mainClass": "baekjoon.gold.다리만들기.Bridge",
