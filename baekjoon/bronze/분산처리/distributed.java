@@ -1,31 +1,25 @@
 package baekjoon.bronze.분산처리;
 
 import java.util.*;
-import java.math.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class distributed {
-    //메모리 초과
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
 
-        int T = sc.nextInt();
-
-        for (int i = 0; i < T; i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            BigInteger c = BigInteger.valueOf(1);
-
-            for(int j = 0; j < b; j++){
-                c = c.multiply(BigInteger.valueOf(a));
-                c = c.remainder(BigInteger.TEN);
+        for (int testcase = 0; testcase < T; testcase++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken()) % 10;
+            int b = Integer.parseInt(st.nextToken());
+            int data = 1;
+            for (int i = 0; i < b; i++) {
+                data = (data * a) % 10;
             }
-
-            if(c.equals(BigInteger.ZERO)){
-                System.out.println(10);
-            }else{
-                System.out.println(c);
-            }
-         
+            System.out.println(data == 0 ? 10 : data);
         }
-        sc.close();
+        br.close();
     }
 }
