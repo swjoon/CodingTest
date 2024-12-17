@@ -11,41 +11,35 @@ public class CCG {
 
         for (int testcase = 0; testcase < T; testcase++) {
             int N = Integer.parseInt(br.readLine());
-            List<Circle> list = new ArrayList<>();
-            list.add(new Circle(0, 0, 0));
-            for (int c = 0; c < N; c++) {
+
+            int[] parent = new int[N + 1];
+            Circle[] list = new Circle[N + 1];
+
+            for (int c = 1; c <= N; c++) {
                 StringTokenizer st = new StringTokenizer(br.readLine());
                 int x = Integer.parseInt(st.nextToken());
                 int y = Integer.parseInt(st.nextToken());
                 int r = Integer.parseInt(st.nextToken());
-                list.add(new Circle(x, y, r));
+                list[c] = new Circle(x, y, r);
+                parent[c] = c;
             }
-            System.out.println(solution(N, list));
+
+            System.out.println(solution(parent, list));
         }
     }
 
-    private static int solution(int N, List<Circle> list) {
-        int[] parent = new int[N + 1];
-
-        for (int i = 0; i <= N; i++) {
-            parent[i] = i;
-        }
+    private static int solution(int[] parent, Circle[] list) {
+        int N = parent.length - 1;
 
         int count = N;
 
         for (int cA = 1; cA < N; cA++) {
-            Circle circleA = list.get(cA);
+            Circle circleA = list[cA];
             for (int cB = cA + 1; cB <= N; cB++) {
-                Circle circleB = list.get(cB);
+                Circle circleB = list[cB];
 
-                double dist = (double)Math.sqrt(Math.pow(circleB.x - circleA.x, 2) + Math.pow(circleB.y - circleA.y, 2));
-                double rSum = circleA.r + circleB.r;
-
-                if (Double.compare(dist, rSum) <= 0) {
-                    if(findParent(parent, cA) != findParent(parent, cB)){
-                        union(parent, cA, cB);
-                        count--;
-                    }
+                if (check(circleA, circleB) && union(parent, cA, cB)) {
+                    count--;
                 }
             }
         }
@@ -53,22 +47,36 @@ public class CCG {
         return count;
     }
 
-    private static void union(int[] parent, int a, int b) {
+    private static boolean check(Circle a, Circle b) {
+        int distX = a.x - b.x;
+        int distY = a.y - b.y;
+        int rSum = a.r + b.r;
+
+        return distX * distX + distY * distY <= rSum * rSum;
+    }
+
+    private static boolean union(int[] parent, int a, int b) {
         int parentA = findParent(parent, a);
         int parentB = findParent(parent, b);
 
-        if(parentA <= parentB){
+        if (parentA == parentB) {
+            return false;
+        }
+
+        if (parentA < parentB) {
             parent[parentB] = parent[parentA];
-        }else{
+        } else {
             parent[parentA] = parent[parentB];
         }
+        
+        return true;
     }
 
-    private static int findParent(int[] parent, int a){
-        if(parent[a] == a){
-            return a;
+    private static int findParent(int[] parent, int a) {
+        if (parent[a] != a) {
+            parent[a] = findParent(parent, parent[a]);
         }
-        return parent[a] = findParent(parent, parent[a]);
+        return parent[a];
     }
 
     static class Circle {
