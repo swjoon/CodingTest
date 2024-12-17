@@ -31,6 +31,8 @@ public class CCG {
             parent[i] = i;
         }
 
+        int count = N;
+
         for (int cA = 1; cA < N; cA++) {
             Circle circleA = list.get(cA);
             for (int cB = cA + 1; cB <= N; cB++) {
@@ -42,22 +44,13 @@ public class CCG {
                 if (Double.compare(dist, rSum) <= 0) {
                     if(findParent(parent, cA) != findParent(parent, cB)){
                         union(parent, cA, cB);
+                        count--;
                     }
                 }
             }
         }
 
-        for(int i = 1; i <= N; i++){
-            findParent(parent, i);
-        }
-
-        Set<Integer> set = new HashSet<>();
-
-        for(int i = 1; i <= N; i++){
-            set.add(parent[i]);
-        }
-
-        return set.size();
+        return count;
     }
 
     private static void union(int[] parent, int a, int b) {
