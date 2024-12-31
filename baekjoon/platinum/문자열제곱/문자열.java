@@ -37,6 +37,6 @@ public class 문자열 {
 
         int minL = L - pi[L - 1];
 
-        return L % minL == 0 ? L / minL : L;
+        return L % minL == 0 ? L / minL : 1;
     }
 }
