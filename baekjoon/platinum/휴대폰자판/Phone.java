@@ -6,70 +6,76 @@ import java.io.*;
 public class Phone {
     static int ans = 0;
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static class TrieNode {
 
-        String in = null;
+        Map<Character, TrieNode> child;
+        boolean isEnd;
 
-        while ((in = br.readLine()) != null) {
-            int N = Integer.parseInt(in);
-
-            HashMap<String, Set<String>> map = new HashMap<>();
-            Set<String> start = new HashSet<>();
-
-            for (int i = 0; i < N; i++) {
-                String[] input = br.readLine().split("");
-
-                start.add(input[0]);
-
-                StringBuilder sb = new StringBuilder();
-
-                sb.append(input[0]);
-
-                map.putIfAbsent(sb.toString(), new HashSet<>());
-
-                for (int index = 1; index < input.length; index++) {
-                    String now = sb.toString();
-                    sb.append(input[index]);
-                    map.putIfAbsent(now, new HashSet<>());
-                    map.get(now).add(sb.toString());
-                }
-                map.putIfAbsent(sb.toString(), new HashSet<>());
-                map.get(sb.toString()).add(".");
-            }
-
-            for (String s : start) {
-                dfs(s, 1, map);
-            }
-
-            System.out.printf("%.2f", (float) ans / N);
-
-            ans = 0;
+        public TrieNode() {
+            this.child = new HashMap<>();
+            this.isEnd = false;
         }
-
     }
 
-    private static void dfs(String now, int count, HashMap<String, Set<String>> map) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
-        if (map.get(now) == null) {
-            ans += count;
-            return;
+        String input = null;
+
+        while ((input = br.readLine()) != null) {
+            int N = Integer.parseInt(input);
+
+            TrieNode root = new TrieNode();
+
+            Set<Character> start = new HashSet<>();
+
+            for (int i = 0; i < N; i++) {
+                String s = br.readLine().trim();
+                start.add(s.charAt(0));
+
+                insert(root, s);
+            }
+
+            ans = 0;
+
+            for (char c : start) {
+                dfs(root.child.get(c), 1);
+            }
+
+            sb.append(String.format("%.2f", (float) ans / N, args)).append("\n");
+        }
+        System.out.print(sb);
+    }
+
+    private static void insert(TrieNode root, String s) {
+
+        TrieNode node = root;
+
+        for (char c : s.toCharArray()) {
+            node = node.child.computeIfAbsent(c, n -> new TrieNode());
         }
 
-        int size = map.get(now).size();
+        node.isEnd = true;
+    }
 
-        for (String s : map.get(now)) {
-            if (size > 1) {
-                if (s.equals(".")) {
-                    ans += count;
-                    continue;
-                }
-                count++;
-                dfs(s, count, map);
-                count--;
-                continue;
+    private static void dfs(TrieNode node, int count) {
+
+        if (node.isEnd) {
+            ans += count;
+        }
+
+        int size = node.child.size();
+
+        for (Map.Entry<Character, TrieNode> entry : node.child.entrySet()) {
+
+            TrieNode child = entry.getValue();
+
+            if (node.isEnd || size > 1) {
+                dfs(child, count + 1);
+            } else {
+                dfs(child, count);
             }
-            dfs(s, count, map);
         }
     }
 }
