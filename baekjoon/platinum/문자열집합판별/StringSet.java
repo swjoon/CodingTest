@@ -31,8 +31,10 @@ public class StringSet {
     }
 }
 
+// 아호-코라식 알고리즘
 class AhoCorasick {
 
+    // 트라이 자료구조
     static class TrieNode {
         Map<Character, TrieNode> child = new HashMap<>();
         TrieNode fail;
@@ -45,6 +47,8 @@ class AhoCorasick {
         root = new TrieNode();
     }
 
+    // 패턴들을 트라이로 build
+    // ex) pattern: { abcd, cd }
     public void buildTrieNode(List<String> patternList) {
 
         for (String pattern : patternList) {
@@ -56,13 +60,18 @@ class AhoCorasick {
 
             current.output.add(pattern);
         }
+        // a -> b -> c -> d <output -> "abcd"> 
+        // c -> d <output -> "cd">
 
+        // 각 노드별 불일치시 이동할 노드 연결
         buildFailLinks();
     }
 
+    // bfs로 탐색
     private void buildFailLinks() {
         Deque<TrieNode> queue = new ArrayDeque<>();
-
+    
+        // child : { a, c }
         for (TrieNode child : root.child.values()) {
             child.fail = root;
             queue.add(child);
@@ -91,7 +100,13 @@ class AhoCorasick {
 
                 queue.add(childNode);
             }
-
+            // 1. queue [a, c]
+            // 2. a.child -> b   b.fail -> root ((b.fail) -> root.child 탐색)   queue [c , b]
+            // 3. c.child -> d   d.fail -> root ((d.fail) -> root.child 탐색)   queue [b , d]
+            // 4. b.child -> c   c.fail -> root.child -> c ((c.fail) -> root.child 탐색)   queue[d , c]
+            // 5. d.child -> null (queue 삭제)   queue[c]
+            // 6. c.child -> d   d.fail -> c.fail -> c -> d ((c.fail) -> c.child 탐색) queue[d]
+            // 7. d.child -> null (queue 삭제)   queue[] -> 탐색종료 
         }
     }
 
@@ -113,6 +128,9 @@ class AhoCorasick {
                 return true;
             }
         }
+
+        // pattern : { abcdef, bcdec, dea }
+        // ex) abcdea 탐색시 실패 ->  fail을 타고 가서 dea 탐색
 
         return false;
     }
