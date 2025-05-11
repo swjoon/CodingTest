@@ -52,6 +52,7 @@ public class Fire {
 
         System.out.println(time == -1 ? "IMPOSSIBLE" : time);
 
+        br.close();
     }
 
     private static int findRoute(Deque<MovePoint> moveQueue, int[][] map, int X, int Y) {
