@@ -64,7 +64,7 @@ public class HideGame {
                 int next = i == 0 ? now.l * 2 : now.l + i;
                 int nextcnt = now.cnt + 1;
 
-                if (next > MAX_L || visited[next][nextcnt % 2]) {
+                if (next > MAX_L || next < 0 || visited[next][nextcnt % 2]) {
                     continue;
                 }
 
