@@ -36,14 +36,12 @@ public class BusTransfer {
         int eX = Integer.parseInt(st.nextToken());
         int eY = Integer.parseInt(st.nextToken());
 
-        Map<Integer, List<Integer>> busConnection = getBusConnection(busInfo);
-
         List<Integer> startList = new ArrayList<>();
         List<Integer> endList = new ArrayList<>();
 
         boolean oneWay = false;
 
-        for (int i = 0; i < busC; i++) {
+        for (int i = 1; i <= busC; i++) {
             int count = 0;
 
             if (meet(busInfo[i][1], busInfo[i][2], busInfo[i][3], busInfo[i][4], sX, sY)) {
@@ -64,35 +62,12 @@ public class BusTransfer {
         int ans = 1;
 
         if (!oneWay) {
-            ans = bfs(startList, endList, busConnection, busC);
+            ans = bfs(startList, endList, busInfo, busC);
         }
 
         System.out.println(ans);
-    }
 
-    private static Map<Integer, List<Integer>> getBusConnection(int[][] busInfo) {
-        Map<Integer, List<Integer>> busConnection = new HashMap<>();
-
-        for (int i = 0; i < busInfo.length; i++) {
-            int sBusNum = busInfo[i][0];
-
-            busConnection.putIfAbsent(sBusNum, new ArrayList<>());
-
-            for (int j = i + 1; j < busInfo.length; j++) {
-                int eBusNum = busInfo[j][0];
-
-                busConnection.putIfAbsent(eBusNum, new ArrayList<>());
-
-                if (checkCanTransfer(
-                        busInfo[i][1], busInfo[i][2], busInfo[i][3], busInfo[i][4],
-                        busInfo[j][1], busInfo[j][2], busInfo[j][3], busInfo[j][4])) {
-                    busConnection.get(sBusNum).add(eBusNum);
-                    busConnection.get(eBusNum).add(sBusNum);
-                }
-            }
-        }
-
-        return busConnection;
+        br.close();
     }
 
     private static boolean checkCanTransfer(int ax, int ay, int bx, int by, int cx, int cy, int dx, int dy) {
@@ -125,7 +100,7 @@ public class BusTransfer {
         return false;
     }
 
-    private static int bfs(List<Integer> startList, List<Integer> endList, Map<Integer, List<Integer>> busConnection, int busC) {
+    private static int bfs(List<Integer> startList, List<Integer> endList, int[][] busInfo, int busC) {
         Deque<Point> queue = new ArrayDeque<>();
 
         boolean[] visited = new boolean[busC + 1];
@@ -138,7 +113,15 @@ public class BusTransfer {
         while (!queue.isEmpty()) {
             Point now = queue.poll();
 
-            for (int nextBusNum : busConnection.get(now.busN)) {
+            for (int i = 1; i <= busC; i++) {
+
+                int nextBusNum = busInfo[i][0];
+
+                if (!checkCanTransfer(
+                        busInfo[now.busN][1], busInfo[now.busN][2], busInfo[now.busN][3], busInfo[now.busN][4],
+                        busInfo[nextBusNum][1], busInfo[nextBusNum][2], busInfo[nextBusNum][3], busInfo[nextBusNum][4])) {
+                    continue;
+                }
 
                 if (visited[nextBusNum]) {
                     continue;
