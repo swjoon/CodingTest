@@ -1,12 +1,11 @@
 package baekjoon.platinum.제로원;
 
 import java.io.*;
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class ZeroOne {
 
-    private static final int MAXLENGTH = 100;
     private static final String ANSWER = "BRAK";
 
     public static void main(String[] args) throws IOException {
@@ -31,48 +30,51 @@ public class ZeroOne {
     }
 
     private static String solution(int N) {
-        Queue<Info> queue = new LinkedList<>();
+        Queue<Integer> queue = new ArrayDeque<>();
 
-        queue.add(new Info(N, ""));
+        boolean[] visited = new boolean[N + 1];
+
+        int[][] info = new int[N + 1][2];
+
+        queue.add(1);
+
+        visited[1] = true;
 
         while (!queue.isEmpty()) {
-            Info info = queue.poll();
+            int num = queue.poll();
 
-            for (int i = 0; i < 9; i++) {
-                int mN = (info.n + N * i);
+            if (num == 0) {
+                return findAnswer(info);
+            }
 
-                int first = mN % 10;
+            for (int i = 0; i < 2; i++) {
+                int nextNum = num * 10 + i;
+                nextNum %= N;
 
-                if (first == 1 || first == 0) {
-                    StringBuilder sb = new StringBuilder(info.sb);
-
-                    int nextN = mN / 10;
-                    sb.append(first);
-
-                    if (sb.length() > MAXLENGTH) {
-                        continue;
-                    }
-
-                    if (nextN == 0 && sb.length() <= MAXLENGTH) {
-                        return sb.reverse().toString();
-                    }
-
-                    queue.add(new Info(nextN, sb.toString()));
+                if (visited[nextNum]) {
+                    continue;
                 }
+
+                visited[nextNum] = true;
+                info[nextNum][0] = num;
+                info[nextNum][1] = i;
+
+                queue.add(nextNum);
             }
         }
 
         return ANSWER;
     }
-}
 
-class Info {
+    private static String findAnswer(int[][] info) {
+        StringBuilder sb = new StringBuilder();
 
-    int n;
-    StringBuilder sb = new StringBuilder();
+        for (int i = 0; i != 1; i = info[i][0]) {
+            sb.append(info[i][1]);
+        }
 
-    public Info(int n, String s) {
-        this.n = n;
-        sb.append(s);
+        sb.append(1);
+
+        return sb.reverse().toString();
     }
 }
